@@ -1,0 +1,20 @@
+{
+  "name": "react-advanced-issues-and-solutions",
+  "version": "1.0.0",
+  "description": "A tech talk about React.js advanced issues and solutions",
+  "main": "index.js",
+  "author": "Shahzaib Khalid <shahzaibkhalidmalik@outlook.com> (http://www.shahzaibkhalid.com)",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  },
+  "dependencies": {
+    "mdx-deck": "^1.10.0",
+    "mdx-deck-live-code": "^1.0.1"
+  },
+  "devDependencies": {
+    "raw-loader": "^1.0.0"
+  }
+}

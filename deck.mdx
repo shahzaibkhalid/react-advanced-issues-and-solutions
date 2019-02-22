@@ -1,0 +1,432 @@
+import AppearList from 'components/AppearList'
+import CustomStyle from 'components/CustomStyle'
+import { Appear } from 'mdx-deck'
+import { LiveCode } from 'mdx-deck-live-code'
+import { Split } from 'mdx-deck/layouts'
+import { Image } from 'mdx-deck'
+import { Head } from 'mdx-deck'
+
+<Head>
+  <title>React | Advanced Issues & Solutions</title>
+  <meta name='twitter:card' content='summary_large_image' />
+  <meta name='twitter:site' content='@shahzaibkhalid' />
+  <meta name='twitter:title' content='React | Advanced Issues & Solutions' />
+  <meta name='twitter:description' content='A discussion of advanced issues in React and their solutions!' />
+  <meta name='twitter:image' content='https://example.com/card.png' />
+  <meta property='og:title' content='React | Advanced Issues & Solutions' />
+  <meta property='og:image' content='//media.example.com/ 1234567.jpg' />
+  <meta property='og:description' content='A discussion of advanced issues in React and their solutions!' />
+  <meta property='og:url' content='//www.example.com/URL of the article' />
+</Head>
+
+# React | Advanced Problems & Solutions 😉
+## Shahzaib Khalid
+##### These slides are available at (https://www.shahzaibkhalid.com/react-advanced-issues-and-solutions)
+
+---
+
+# Stop! 🛑
+
+This is not an introduction to React! 😶
+
+You must have an idea about:
+<AppearList
+  list={[
+    'Props',
+    'State',
+    'Lifecycle Methods'
+  ]}
+/>
+
+---
+
+# Who am I? 😁
+![Shahzaib's Avatar](static/profile.jpg)
+## A front-end developer 👨🏻‍💻 mainly interested in JavaScript & React. ⚛︎
+#### @shahzaibkhalid | shahzaibkhalid.com
+
+---
+
+# React is Winning! 🎉
+
+![npm trends about top JS frameworks](static/npm-trends.png)
+
+---
+
+# But...
+## <Appear>There are some pain-points! 😭</Appear>
+
+---
+
+# What this talk is about
+
+<AppearList
+  list={[
+    'Issues with classes in React 😢',
+    'How does React Hooks solve problems with classes? 🤔',
+    'Pain of sharing code among components using HOC & Render Props 😒',
+    'How does React Hooks simplify code sharing among components? 🤔'
+  ]}
+/>
+
+---
+
+# Issues with classes in React
+<div style={{fontSize: 50}}>
+  <Appear>
+    Let's dive in! 👉
+  </Appear>
+</div>
+
+
+---
+
+export default Split
+
+![Class Component](static/class-component.png)
+
+![Functional Component](static/functional-component.png)
+
+---
+
+# We need to use classes to use state and lifecycle methods
+
+---
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'red',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Problem: 01
+</CustomStyle>
+
+# Classes has annoying behavior when it comes to "this" 😢
+
+---
+
+<iframe 
+  src="https://codesandbox.io/embed/nn7x3m80vj?codemirror=0&fontsize=18&hidenavigation=1" 
+  style={{ width: '100vw', height: '100vh', border: 'none' }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
+
+---
+
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'red',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Problem: 02
+</CustomStyle>
+
+# Related logic is split across Lifecycle methods 😐
+
+---
+
+![Logic split across component](static/code-split-among-lifecycle.png)
+
+---
+
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'red',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Problem: 03
+</CustomStyle>
+
+# You're not sure when you'd be converting functional component to class 🤔
+
+---
+
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'red',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Problem: 04
+</CustomStyle>
+
+# Classes are hard to minify and tree-shake 😶
+
+---
+
+![Classes are hard to minify and tree-shake](static/classes-tree-shaking.png)
+
+---
+
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'red',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Problem: 05
+</CustomStyle>
+
+# Classes makes it difficult to hot-reload your code 😟
+
+---
+
+# How we can solve these problems with Classes? 🤔
+
+<div style={{ fontSize: 60 }}>
+  <Appear>
+    By avoiding the Classes! Simple. 😅
+  </Appear>
+</div>
+
+---
+
+# React Hooks 🎉
+
+### Use State and Lifecycle, straight from simple JavaScript functions!
+
+---
+
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'purple',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Hook: 01
+</CustomStyle>
+
+# useState
+### It let us hook state into functional components! 😉
+
+---
+
+<iframe 
+  src="https://codesandbox.io/embed/nn7x3m80vj?codemirror=0&fontsize=18&hidenavigation=1" 
+  style={{ width: '100vw', height: '100vh', border: 'none' }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
+
+---
+
+# Let's compare Classes with Hooks 🔥
+
+---
+
+export default Split
+
+![Class Component](static/counter-class-component.png)
+
+![Functional Component](static/counter-functional-component.png)
+
+
+---
+
+# But, what to do if I've a state object, instead of a single value?
+
+---
+
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'purple',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Hook: 02
+</CustomStyle>
+
+# useReducer
+### Inspired by Redux, it let us hook state object into functional component! 😉
+
+---
+
+# Let's compare Classes vs Hooks for useReducer!
+
+---
+
+<img src="static/todo-with-class.png" />
+<img src="static/todo-with-hooks.png" />
+
+---
+
+<CustomStyle
+  applyStyle={{ 
+    backgroundColor: 'purple',
+    color: 'white',
+    padding: 15,
+    fontSize: 70
+  }}
+>
+  Hook: 03
+</CustomStyle>
+
+# useRef
+### Built-in React Hook to access any JSX Element 🖖
+##### Already covered! 😎
+
+---
+
+# There are many more built-in Hooks! 🙏
+
+---
+
+But for now, let's discuss problem other than Classes
+# Sharing stateful logic among React Components 😶
+
+---
+
+# Sharing stateful logic and sharing code are two different things. ☘️
+# How?
+
+---
+
+![Code sharing is different](static/code-sharing.png)
+
+---
+
+# Let's understand through an example that what's the meaning of sharing stateful logic?
+
+---
+
+export default Split
+
+![Content Normal](static/content-normal.png)
+
+![Sidebar Normal](static/sidebar-normal.png)
+
+---
+
+<iframe 
+  src="https://codesandbox.io/embed/nn7x3m80vj?codemirror=0&fontsize=18&hidenavigation=1" 
+  style={{ width: '100vw', height: '100vh', border: 'none' }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
+
+---
+
+![withJoke HOC](static/withjoke-hoc.png)
+
+---
+
+export default Split
+
+![Content HOC](static/content-hoc.png)
+
+![Sidebar HOC](static/sidebar-hoc.png)
+
+---
+
+# But, HOCs can lead us to "Wrapper Hell" 👀
+
+---
+
+![HOC Hell](static/hoc-wrapper-hell.png)
+
+---
+
+# Render Props to Rescue 🚑
+
+---
+
+<iframe 
+  src="https://codesandbox.io/embed/nn7x3m80vj?codemirror=0&fontsize=18&hidenavigation=1" 
+  style={{ width: '100vw', height: '100vh', border: 'none' }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
+
+---
+
+![Render Prop Joke](static/joke-render-prop.png)
+
+---
+
+export default Split
+
+![Content Render Prop](static/content-render-prop.png)
+
+![Sidebar Render Prop](static/sidebar-render-prop.png)
+
+---
+
+# Multiple Render-Props can lead us to "massive nesting" 😶
+
+---
+
+![Render Prop Nesting](static/render-prop-nesting.png)
+
+(Credits: Nick Gard - Why I Don't Use Render Props in React on [Medium](https://medium.com/@ntgard/why-i-dont-use-render-props-in-react-10f18abdff11))
+
+---
+
+# Custom Hooks 🎉
+
+---
+
+<iframe 
+  src="https://codesandbox.io/embed/nn7x3m80vj?codemirror=0&fontsize=18&hidenavigation=1" 
+  style={{ width: '100vw', height: '100vh', border: 'none' }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
+
+---
+
+![Custom useJoke Hook](static/usejoke.png)
+
+---
+
+export default Split
+
+![Custom Hook Content](static/content-hook.png)
+
+![Custom Hook Sidebar](static/sidebar-hook.png)
+
+---
+
+# Custom Hooks are the most exciting features of Hooks! 😉
+
+### No nesting & wrapper hell!
+
+---
+
+# Rules of Hooks!
+
+* Only Call Hooks at the Top Level
+* Custom Hooks names should always start with `use`
+* Don’t call Hooks from regular JavaScript functions. Instead, you can:
+  * Call Hooks from React function components.
+  * Call Hooks from custom Hooks
+
+---
+
+# And there are many more Hooks to checkout!
+## Like, `useDarkMode` & `useMemo` 😎
+
+* For React built-in Hooks, checkout [Hooks API Reference](https://reactjs.org/docs/hooks-reference.html)
+* For community built custom hooks, checkout [useHooks.com](https://usehooks.com/)
+
+---
+
+# These slides are built with React too. 😎
+
+### Checkout the source code at: 
+
+
+---
+
+export { light as theme } from 'mdx-deck/themes'
